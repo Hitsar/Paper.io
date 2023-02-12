@@ -3,6 +3,7 @@ using UnityEngine;
 public class Baze : MonoBehaviour
 {
     [SerializeField] private TrailRenderer _trail;
+    [SerializeField] private MeshRenderer _renderer;
 
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -24,6 +25,7 @@ public class Baze : MonoBehaviour
 
     private void FillSelectedZone()
     {
+        _renderer.probeAnchor = _trail.probeAnchor;
         Debug.Log("заполнение");
     }
 }
